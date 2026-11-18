@@ -1,0 +1,2 @@
+import {motion} from 'framer-motion'
+export default function RevealText({text,className='',delay=0}){return <span className={className} aria-label={text}>{text.split(' ').map((w,i)=><motion.span key={i} aria-hidden="true" className="inline-block mr-[.25em]" initial={{opacity:0,y:20,filter:'blur(6px)'}} animate={{opacity:1,y:0,filter:'blur(0px)'}} transition={{delay:delay+i*.12,duration:.7}}>{w}</motion.span>)}</span>}
